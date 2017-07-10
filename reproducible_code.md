@@ -35,57 +35,6 @@ It can feel daunting to get started with writing a reproducible report because o
 ## How to do a report?
 
 
-There are as many ways to approach a reproducible report as there are scientists. However, there are general principles that will help you produce a reproducible report. As the number of scientists who are writing reproducible manuscripts increases, there are more examples that are publicly available that you can study and use to set up your analysis [we need to select some examples].
-
-One of the challenges of any scientific enterprise is that it can be difficult to know in advance what will be in the final version of your manuscript. However, some initial planning of your analysis will be helpful to get your data, scripts, results, figures, and text organized. Things will probably change as your analysis progresses, but having this initial plan will help you.
-
-### Choose a directory structure to organize your projects
-
-Depending on your field, the tools you use, and your preferences, you may need to adapt these recommendations, but in general your project will contain at least a variation of:
-
-* **raw-data** this directory will contain your raw data. This is the data as
-  they have been collected/entered in the spreadsheet/database. They should
-  never be modified by hand. They are the starting point of your analyses.
-* **data** or **processed-data** this directory will contain your modified raw
-  data. Some scripts in your analysis will transform the raw data into these
-  processed data. These scripts will for instance reformat the data in a "tidy"
-  format, remove outliers and missing points as needed, or fix spelling
-  mistakes.
-* **figures** will be the directory where all the figures to be used in the main
-  text or as supplementary material will be generated.
-* **src**, **R**, **scripts**, (or similar) will contain the code that you write
-  for your analysis.
-
-The manuscript itself could be stored inside a **doc** or **manuscript** directory. However, because of the way R works, I find it easier to store the manuscript file at the root of the project directory.
-
-All your files should be contained inside this directory structure, so you can easily share it with other people.
-
-
-### Give informative names to your files
-
-This is valid for your data files as well as your code, use short and informative names that clearly convey what your file contain. Making your file names consistent is easier for people to find their way around your project, and easier to write code to parse the content of the directories.
-
-
-### Document the content of your files
-
-In your code, write comments that describe what your scripts do, the format of the input for your functions, and the expected format of the output. For files that can't be commented easily, include README files in your directories that describe what is in each file, where the data is coming from, links to relevant papers or data repositories, the units of the measures included in the columns.
-
-
-### Take advantage of literate programming
-
-When writing your report avoid "hard coding" any values in your manuscript and instead generate them directly. For instance, instead of writing "we analyzed 19864 observations", write "we analyzed `r nrow(toad_survival)` observations". RMarkdown also supports parameters which can be useful to develop the report on a subset of the data so it can be assembled quickly, but you can easily switch to the full dataset by only changing the value of one variable. More generally, automate wherever possible.
-
-
-### Write functions for everything
-
-As mentioned earlier, take advantage of R's functional approach to make each step of your analysis a function. It allows you to minimize the number of global variables that will be in your environment and therefore minimize the chance of using the incorrect value in your calculations. Functions also make your intentions more explicit, because it forces you to break down your analysis into smaller tasks. By having, small functions that only do one thing, you can have more control and reduce the chances of introducing bugs: for instance you can test the format of the input and of the output of your functions allowing you to test that they behave as expected. You can then build on complexity by putting these functions together by stringing together these small modular pieces. By giving informative and consistent names to your functions, reading your code to understand what it does will be easier. By writing functions, you facilitate the re-use and automation within your project, so if you find an error or need to change a parameter, you will only have to do it once.
-
-
-### Use version control
-
-Version control allows you to record the history of your project, and to go back to previous version of your code, allowing you to pinpoint where and when you made a change that started to break your code. Historically, version control has been developed to keep track of the development of code, but it works relatively well to also keep track of the text of your manuscript. Currently, git is the most popular version control software, and GitHub is a service that allows you to host and share your projects versioned with git easily.
-
-
 ## How to use RMarkdown?
 
 The previous section gave general advice on best practices to write reproducible reports, here we will focus on how to apply them in R. Currently, the most common way people practice literate programming in R is through RMarkdown.
