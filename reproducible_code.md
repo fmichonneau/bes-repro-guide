@@ -43,7 +43,7 @@ The `rmarkdown` package automates a multi-step process (Fig. xx). Under the hood
 
 The `bookdown` package comes in to take care of numbering the figures and tables, as well as dealing with citations. As its name suggests, this package can be used to author books, but it is also well-suited to help generating reports.
 
-![Relations between the different tools used to generate reports fromm RMarkdown](drawing.png)
+![Relations between the different R packages and tools used to generate reports from RMarkdown files](drawing.png)
 
 
 ### the YAML header
