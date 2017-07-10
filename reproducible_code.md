@@ -33,16 +33,13 @@ To make your report reproducible, your code will need to be self-contained. As a
 It can feel daunting to get started with writing a reproducible report because of the technical skills and knowledge required. However, a partially reproducible report is better than a non-reproducible one. So each step you take towards reproducibility is worth taking, and sets you up to take the next one for the next project.
 
 
-## How to do a report?
+## How to do a report using RMarkdown?
 
+Programming languages typically used by scientistics for data analysis have libraries or packages that can be used to generate reproducible reports. The most popular ones are Jupyter Notebooks for scientists who primarily use python and RMarkdown for those who use R. While they both share many commonalities, their implementation and everyday applications differ. Here, we focus on RMarkdown.
 
-## How to use RMarkdown?
+RMarkdown is a file format (typically saved with the `Rmd` extension) that can contain: a YAML header (see next section), text, code chunks, and inline code. The `rmarkdown` package converts this file into a report most commonly into HTML or PDF.
 
-The previous section gave general advice on best practices to write reproducible reports, here we will focus on how to apply them in R. Currently, the most common way people practice literate programming in R is through RMarkdown.
-
-RMarkdown is a file format (typically saved with the `Rmd` extension) that can contain: a YAML header, text, code chunks, and inline code. The `rmarkdown` package converts this file into a report most commonly into HTML or PDF.
-
-The `rmarkdown` package automates a multi-step process (Fig. xx). Under the hood, it calls the `knitr` package that converts the Rmd file into a markdown file. In the process, `knitr` takes all the code chunks and the inline code, run them through R (or other programs), capture their output, and incorporates them in the report. Afterwards, `rmarkdown` calls the pandoc program (it is an external program that is not related to R) that can take the markdown file and converts to a variety of formats. For pandoc to generate PDF files, you will need a functional installation of LaTeX that you will need to install separately.
+The `rmarkdown` package automates a multi-step process (Fig. xx). Under the hood, it calls the `knitr` package that converts the Rmd file into a markdown file. In the process, `knitr` takes all the code chunks and the inline code, run them through R (or other programs), capture their output, and incorporates them in the report. Afterwards, `rmarkdown` calls the pandoc program (it is an external program that is not related to R) that can take the markdown file and converts to a variety of formats. For pandoc to generate PDF files, you will need a functional [installation of LaTeX](https://www.latex-project.org/get/) that you will need to install separately.
 
 The `bookdown` package comes in to take care of numbering the figures and tables, as well as dealing with citations. As its name suggests, this package can be used to author books, but it is also well-suited to help generating reports.
 
