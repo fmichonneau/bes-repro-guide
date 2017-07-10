@@ -59,7 +59,7 @@ The YAML header is at the top of your file, it is delineated by three dashes (`-
 
 ### Code chunks
 
-Code chunks are	interspersed within the text of the report. They are delineated by three backticks (` ``` `) at the top and at the bottom of it. The top backticks are followed by a curly bracket that specify: (1) the language in which the code chunk is written, (2) the name of the chunk (optional but good practice), (3) `knitr` options that control whether and how the code, the output, or the figure are interpreted and displayed. Everything that comes after the name of the chunk has to be a valid R expression: the strings need be quoted, the arguments are separated by commas, and logical values (TRUE/FALSE) need to be capitalized.
+Code chunks are	interspersed within the text of the report. They are delineated by three backticks (` ``` `) at the top and at the bottom of it. The top backticks are followed by a curly bracket that specify: (1) the language in which the code chunk is written, (2) the name of the chunk (optional but good practice), (3) `knitr` options that control whether and how the code, the output, or the figure are interpreted and displayed. Everything that comes after the name of the chunk has to be a valid R expression: the strings need be quoted, the arguments are separated by commas, and logical values (`TRUE`/`FALSE`) need to be capitalized.
 
 
 ### How to deal with figures?
