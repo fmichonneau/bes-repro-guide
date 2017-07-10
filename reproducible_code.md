@@ -57,7 +57,7 @@ The YAML header is at the top of your file, it is delineated by three dashes (`-
 * the arguments to pass to pandoc to control the format of the output as
   well as additional information such as the bibliography file and the
   formatting of the list of references.
-* parameters for your report
+* parameters for your report: for instance, you can specify a parameter such that your report will only use a subset of your data so the final product will be generated quickly when you are developing the code for your project. Once your code is working, you can switch to the full dataset.
 
 
 ### Code chunks
